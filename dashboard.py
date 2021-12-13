@@ -7,6 +7,7 @@ from dash.dependencies import Input, Output
 
 app = dash.Dash(__name__, meta_tags=[{'name':'viewport', 'content':'width=device-width'}])
 app.title = 'Dashboard Co2 Emissions Globally'
+server = app.server
 
 df = pd.read_csv('clean_dataset_co2.csv')
 
