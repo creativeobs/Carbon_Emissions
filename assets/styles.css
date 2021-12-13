@@ -6,7 +6,7 @@
 
 html{
 	scroll-behavior:smooth;		
-	font-family: url("assets/Product Sans Regular.ttf");
+	font-family: url('https://fonts.googleapis.com/css?family=Open+Sans');
 	max-width: 100%;
 	overflow-x: hidden;
 	min-height: 100vh;
