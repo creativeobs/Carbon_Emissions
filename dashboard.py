@@ -76,7 +76,7 @@ app.layout = html.Div([
             
             html.Div(
                 [
-                    html.H2(id='title4),
+                    html.H2(id='title4'),
                     ], className = 'title_text'
                 ),
             
