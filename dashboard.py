@@ -373,7 +373,7 @@ def update_donut_chart(country, year, dtype):
     )
 def update_title(year, dtype, rank):
     
-    return f'Carbon Emissions of Country over Time ({year[0]}-{year[1]}) ({dtype})', f'Global Map of Carbon Emissions over Time ({year[0]}-{year[1]}) ({dtype})', f'{rank.split()[0]} Countries for Carbon Emission ({year[0]}-{year[1]}) ({dtype})', f'Carbon Emissions per Country ({year[0]}-{year[1]}) ({dtype})', f'Total Sum percentages of Types of Carbon Emitted ({year[0]}-{year[1]}) ({dtype})'
+    return f'Carbon Emissions of Country over Time ({year[0]}-{year[1]}) ({dtype})', f'Global Map of Carbon Emissions over Time ({year[0]}-{year[1]}) ({dtype})', f'{rank.split()[0]} Countries for Carbon Emission ({year[0]}-{year[1]}) ({dtype})', f'Carbon Emissions per Country ({year[0]}-{year[1]})', f'Total Sum percentages of Types of Carbon Emitted ({year[0]}-{year[1]}) ({dtype})'
 
 @app.callback(
     [Output("t1", "children"),
