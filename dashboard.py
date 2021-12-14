@@ -14,17 +14,6 @@ df = pd.read_csv('clean_dataset_co2.csv')
 
 app.layout = html.Div([
     
-    # html.Div(
-    #     [
-    #         html.Img(src='https://datahub.io/static/img/datahub-cube-edited.svg',
-    #                   width = 80, height = 80),
-    #         html.H1('Carbon Emissions per Country (1751 - 2014)'),
-    #         html.H1(''),
-    #     ], className = 'title_container'
-    # ),
-    
-    # html.Br(),
-    
     html.Div(
         [
             
@@ -87,7 +76,7 @@ app.layout = html.Div([
             
             html.Div(
                 [
-                    html.H2('Carbon Emissions per Country (1751 - 2014)'),
+                    html.H2(id='title4),
                     ], className = 'title_text'
                 ),
             
@@ -182,7 +171,7 @@ app.layout = html.Div([
                 ),
                 
                 html.Div([
-                   html.H3('Total Sum percentages of Types of Carbon Emitted'),
+                   html.H3(id='title5'),
                    dcc.Graph(
                         id='donut',
                     )], className= 'content_container', style = {'width':'30%'}
@@ -375,13 +364,16 @@ def update_donut_chart(country, year, dtype):
     [Output("title", "children"),
      Output("title2", "children"),
      Output("title3", "children"),
+     Output("title4", "children"),
+     Output("title5", "children"),
      ], 
     [Input('year-slider', 'value'),
      Input('dropdown_type', 'value'),
      Input('dropdown_rank', 'value')]
     )
 def update_title(year, dtype, rank):
-    return f'Carbon Emissions of Country over Time ({year[0]}-{year[1]}) ({dtype})', f'Global Map of Carbon Emissions over Time ({year[0]}-{year[1]}) ({dtype})', f'{rank.split()[0]} Countries for Carbon Emission ({year[0]}-{year[1]}) ({dtype})'
+    
+    return f'Carbon Emissions of Country over Time ({year[0]}-{year[1]}) ({dtype})', f'Global Map of Carbon Emissions over Time ({year[0]}-{year[1]}) ({dtype})', f'{rank.split()[0]} Countries for Carbon Emission ({year[0]}-{year[1]}) ({dtype})', f'Carbon Emissions per Country ({year[0]}-{year[1]}) ({dtype})', f'Total Sum percentages of Types of Carbon Emitted ({year[0]}-{year[1]}) ({dtype})'
 
 @app.callback(
     [Output("t1", "children"),
