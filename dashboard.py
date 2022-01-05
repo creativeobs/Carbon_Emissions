@@ -263,7 +263,7 @@ def update_bar_chart(top, year, dtype, country):
     else:
         nndf = nndf.groupby('Country').sum().sort_values(dtype, ascending=True).head(num)
     
-    fig4 = px.bar(nndf, y=nndf.index, x=dtype, height=400,
+    fig4 = px.bar(nndf, y=nndf.index, x=dtype, height=400, text=nndf.index,
               color=nndf.index).update_layout({
                                             'plot_bgcolor': 'rgba(0, 0, 0, 0)',
                                             'paper_bgcolor': 'rgba(0, 0, 0, 0)',
